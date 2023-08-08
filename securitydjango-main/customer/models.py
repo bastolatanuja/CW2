@@ -12,6 +12,8 @@ class Customer(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
     name = models.CharField(max_length=200, null=True)
     email = models.CharField(max_length=200, null=True)
+    email_token = models.CharField(max_length=200,null=True,blank=True)
+    is_verified = models.BooleanField(default=False,null=True,blank=True)
     phone = models.CharField(max_length=10, null=True)
     username = models.CharField(max_length=300, null=True, blank=True)
     password = models.CharField(max_length=300, null=True, blank=True)
@@ -31,7 +33,7 @@ class Customer(models.Model):
 
 
 class CustomerAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'email', 'phone','username', 'password', 'date_created', 'reward_point', 'user')
+    list_display = ('id', 'name', 'email', 'email_token','is_verified' ,'phone','username', 'password', 'date_created', 'reward_point', 'user')
 admin.site.register(Customer, CustomerAdmin)
     
     

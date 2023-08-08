@@ -172,7 +172,17 @@ def activate():
     #     return False
 
     # return True
+def send_verification_email(user,email,token):
+    try:
+        subject = 'Account Activation'
+        message = f'Hi {user.username}, thank you for registering in Tanuja`s website. Please click on the link to verify http://127.0.0.1:8000/verify/{token}'
+        email_from = settings.EMAIL_HOST_USER
+        recipient_list = [email, ]
+        send_mail( subject, message, email_from, recipient_list )
+    except Exception as e:
+        return False
 
+    return True
 
 def registration_view(request):
     customer_form = CustomerForm()
@@ -212,10 +222,12 @@ def registration_view(request):
                         email_token = str(uuid.uuid4())
                         user = User.objects.create_user( un, em, pw)
                         user.save()
-                        # activateEmail(user.email,user,user.email_token)
                         customer = customer_form.save(commit=False)
+                        customer.email_token = email_token
                         customer.user = user
                         customer.save()
+                        send_verification_email(customer.user,customer.user.email,customer.email_token)
+
                         is_registered = True  # Set registration completion flag
                         messages.success(request, 'Your account has been registered. Check your email to activate your account')
 
