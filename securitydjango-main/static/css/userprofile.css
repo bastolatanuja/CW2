@@ -1619,9 +1619,9 @@ a.text-white:focus {
 }
 
 .form-control-label {
-  font-size: .875rem;
+  font-size: 1.875rem;
   font-weight: 600;
-  color: #525f7f;
+  color: #000000;
 }
 
 .form-control {
@@ -1660,6 +1660,9 @@ textarea[resize='horizontal'] {
   transition: box-shadow .15s ease;
   border: 0;
   box-shadow: 0 1px 3px rgba(50, 50, 93, .15), 0 1px 0 rgba(0, 0, 0, .02);
+  background-color: black;
+  color: white;
+  font-weight: 900;
 }
 
 .form-control-alternative:focus {
@@ -1723,11 +1726,23 @@ textarea[resize='horizontal'] {
 .focused .form-control {
   border-color: rgba(50, 151, 211, .25);
 }
-
+.flex-center{
+  display: flex;
+        justify-content: center;
+}
 .header {
   position: relative;
+  display: none !important;
 }
-
+.hover-transparent:hover{
+  background-color: transparent;
+}
+.user-profile-container{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
 .input-group {
   transition: all .15s ease;
   border-radius: .375rem;
@@ -1898,6 +1913,7 @@ textarea[resize='horizontal'] {
     }
   }
 
+
   @keyframes hide-navbar-dropdown {
     from {
       opacity: 1;
@@ -1908,7 +1924,7 @@ textarea[resize='horizontal'] {
       opacity: 0;
     }
   }
-}
+
 
 @media (max-width: 767.98px) {
   .navbar-nav .nav-link {
@@ -1984,3 +2000,4 @@ p {
 
 .display-2 span {
   font-weight: 300;
+}

@@ -49,30 +49,109 @@
     <body>
         <div class="container-fluid header-container">
             <div class="row">
-            <!-- header -->
-            <div class="col-lg-12 hbar" >
-                
-          
-                <div class="logo">
-                <img src="{% static 'img/NewImg/tailslogo.png' %}" width="200px" height="80px" ahref="{% url 'home' %}";> 
-                
-                <marquee class="css1", style="  
-                font-size:20px;
-                font-family: georgia;
-                font-style:italic;
-                font-weight:bold;
-                color:purple;
-                text-shadow: 2px 2px 8px #FF0000;"> Welcome to Tails & Nails.. your furry friends are waiting for you! Hurry up!!!!!!!!!</marquee>
-                </div>
-                
-        
-                <!-- <div class="searchbar">
-                <form method="get" action="search">
-                    <input type="search" id="search" name="search" placeholder="Search..." />
-                </form>
-                </div> -->
-        
-                {% if user.is_authenticated %}
+                <div class="col-lg-12 navdiv ">
+                    <nav class="navbar navbar-expand-lg navbar-light hometag ">
+
+                        <div class="collapse navbar-collapse nav-item dropdown " id="navbarNav">
+                            <ul class="navbar-nav navlist ">
+                                <li class="nav-item">
+                                    <div class="logo">
+                                        <img src="https://img.freepik.com/premium-vector/baby-happy-logo-vector-template_15146-1050.jpg?w=360" width="100px" height="80px" ahref="{% url 'home' %}";> 
+                                        
+                                        {% comment %} <marquee class="css1", style="  
+                                        font-size:20px;
+                                        font-family: georgia;
+                                        font-style:italic;
+                                        font-weight:bold;
+                                        color:purple;
+                                        text-shadow: 2px 2px 8px #FF0000;"> Welcome to Tails & Nails.. your furry friends are waiting for you! Hurry up!!!!!!!!!</marquee> {% endcomment %}
+                                        </div>
+                                </li>
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                                </li>
+                                <li class="nav-item dropdown hover-one">
+                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        All Categories
+                                    </a>
+                                    <div class="dropdown-menu one" aria-labelledby="navbarDropdown">
+                                        <div class="dropdown pets">
+                                            <a class="dropdown-item" onclick="window.open(this.href)"
+                                                href="{% url 'product-by-category' 'Hair and Skin' %}" role="button"
+                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">
+                                                Hair ans Skin
+                                            </a>
+
+                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                                <a class="dropdown-item"
+                                                    href="{% url 'product-by-subcategory' 'Hair' %}">Hair</a>
+                                                <a class="dropdown-item"
+                                                    href="{% url 'product-by-subcategory' 'Skin' %}">Skin</a>
+                                                {% comment %} <a class="dropdown-item"
+                                                    href="{% url 'product-by-subcategory' 'Fish' %}">Fish</a>
+                                                <a class="dropdown-item"
+                                                    href="{% url 'product-by-subcategory' 'Bird' %}">Bird</a> {% endcomment %}
+                                            </div>
+                                        </div>
+                                        <a class="dropdown-item"
+                                            href="{% url 'product-by-category' 'Clothes' %}">clothes</a>
+                                        <a class="dropdown-item" href="{% url 'product-by-category' 'Baby Foods' %}">Baby
+                                            Foods</a>
+                                    </div>
+                                </li>
+
+                                <li style="padding-right: 20px;" class="nav-item">
+                                    <a class="nav-link movenav" href="{% url 'product-by-category' 'Hair and Skin' %}">Hair and Skin</a>
+
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link movenav" href="{% url 'product-by-category' 'Clothes' %}">clothes</a>
+                                </li>
+                                <li class="nav-item movenav">
+                                    <a class="nav-link" href="{% url 'product-by-category' 'Baby Foods' %}">Baby Food</a>
+                                </li>
+                                {% comment %} <li class="nav-item dropdown hover-two">
+                                    <!-- DROPDOWN FOR OUR SERVICES  -->
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                        Our Services
+                                    </a>
+                                    <div class="dropdown-menu two" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="{% url 'grooming' %}">Mother-child healthcare</a>
+                                        <a class="dropdown-item" href="{% url 'vaccination'%}">Vaccination</a>
+                                        <a class="dropdown-item" href="{% url 'pet-hostel'%}">Baby sitting</a>
+                                    
+                                    </div>
+                                </li> {% endcomment %}
+                                <div class="searchbar" style="margin-top: 5px; ">
+                                    <form method="get" action="search" style="margin-bottom: 5px;">
+                                        <input type="search" id="search" name="search" placeholder="Search..." />
+                                    </form>
+                                </div>
+                                {% if user.is_staff%}
+                                <li class="nav-item movenav">
+
+                                    <a class="nav-link " href="{% url 'owner' %}">Manage</a>
+
+
+
+                                </li>
+                                {% endif %}
+                                <li class="nav-item movenav">
+                                    <div>
+                                        <a class="nav-link movenav" style="margin-left: 10px;" href="{% url 'cart' %}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"/></svg>
+                                            <p style="color: red;float: right; font-size: 12px;"> {{cartItems}} </p>
+                                        </a>
+
+                                        </a>
+
+                                    </div>
+                                </li>
+                                <li class="nav-item">
+                                    {% if user.is_authenticated %}
                 <div class="nav-item dropdown userhover">
                 <a class="nav-link movenav" onclick="window.open(this.href)" id="drop" data-bs-toggle="dropdown"
                     aria-expanded="false" href="{% url 'user-profile' %}">
@@ -116,112 +195,33 @@
                 {% else %}
                 <div class="signhome">
                 <a href="{% url 'login' %}">
-                    <button class="btn btn-primary"><b>Sign in</b></button>
+                    <button class="btn"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" height="48px" width="48px" version="1.1" id="Layer_1" viewBox="0 0 459 459" xml:space="preserve">
+                        <g id="XMLID_1315_">
+                            <g>
+                                <g>
+                                    <ellipse cx="229.5" cy="161" rx="71.5" ry="84"/>
+                                    <path d="M229.5,0C102.686,0,0,102.77,0,229.5C0,355.823,102.191,459,229.5,459C355.989,459,459,356.656,459,229.5     C459,102.82,356.396,0,229.5,0z M375.867,349.884c-8.967-44.692-39.664-82.044-81.079-101.501     C276.854,265.312,253.919,275,229.5,275c-25.083,0-47.968-10.183-65.483-26.801c-41.512,19.292-72.053,56.497-80.925,101.636     c-8.407-10.191-15.651-21.136-21.681-32.664c9.144-24.053,23.819-46.017,43.356-64.361     c12.145-11.402,25.694-20.942,40.251-28.489C133.958,205.726,128,183.829,128,161c0-63.433,45.618-114,101.5-114     C285.492,47,331,97.686,331,161c0,22.859-5.973,44.784-17.06,63.395c38.355,19.914,68.383,52.943,83.614,92.846     C391.521,328.762,384.275,339.699,375.867,349.884z"/>
+                                </g>
+                            </g>
+                        </g>
+                        </svg>
+                    </button>
                 </a>
                 </div>
                 {% endif %}
-            </div>
-            </div>
-        </div>
-        
-
-                <!-- navigationbar -->
-                <div class="container-fluid header-container">
-                    <div class="row">
-                <div class="col-lg-12 navdiv ">
-                    <nav class="navbar navbar-expand-lg navbar-light hometag "  style="background-color: #A3C1AD;">
-
-                        <div class="collapse navbar-collapse nav-item dropdown " id="navbarNav">
-                            <ul class="navbar-nav navlist ">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="{% url 'home' %}">Home</a>
-                                </li>
-                                <li class="nav-item dropdown hover-one">
-                                    <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        All Categories
-                                    </a>
-                                    <div class="dropdown-menu one" aria-labelledby="navbarDropdown">
-                                        <div class="dropdown pets">
-                                            <a class="dropdown-item" onclick="window.open(this.href)"
-                                                href="{% url 'product-by-category' 'Pets' %}" role="button"
-                                                id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
-                                                aria-expanded="false">
-                                                Pets
-                                            </a>
-
-                                            <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                                                <a class="dropdown-item"
-                                                    href="{% url 'product-by-subcategory' 'Dogs' %}">Dogs</a>
-                                                <a class="dropdown-item"
-                                                    href="{% url 'product-by-subcategory' 'Cats' %}">Cats</a>
-                                                <a class="dropdown-item"
-                                                    href="{% url 'product-by-subcategory' 'Fish' %}">Fish</a>
-                                                <a class="dropdown-item"
-                                                    href="{% url 'product-by-subcategory' 'Bird' %}">Bird</a>
-                                            </div>
-                                        </div>
-                                        <a class="dropdown-item"
-                                            href="{% url 'product-by-category' 'Pet Accessories' %}">Pet Accessories</a>
-                                        <a class="dropdown-item" href="{% url 'product-by-category' 'Pet Food' %}">Pet
-                                            Foods</a>
-                                    </div>
-                                </li>
-
-                                <li style="padding-right: 20px;" class="nav-item">
-                                    <a class="nav-link movenav" href="{% url 'product-by-category' 'Pets' %}">Pets</a>
-
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link movenav" href="{% url 'product-by-category' 'Pet Accessories' %}">Pet
-                                        accessories</a>
-                                </li>
-                                <li class="nav-item movenav">
-                                    <a class="nav-link" href="{% url 'product-by-category' 'Pet Food' %}">Pet Food</a>
-                                </li>
-                                <li class="nav-item dropdown hover-two">
-                                    <!-- DROPDOWN FOR OUR SERVICES  -->
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                        Our Services
-                                    </a>
-                                    <div class="dropdown-menu two" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="{% url 'grooming' %}">Grooming and trimming</a>
-                                        <a class="dropdown-item" href="{% url 'vaccination'%}">Vaccination</a>
-                                        <a class="dropdown-item" href="{% url 'pet-hostel'%}">Pet hostel</a>
-                                    
-                                    </div>
-                                </li>
-                                <div class="searchbar" style="margin-top: 5px; ">
-                                    <form method="get" action="search" style="margin-bottom: 5px;">
-                                        <input type="search" id="search" name="search" placeholder="Search..." />
-                                    </form>
-                                </div>
-                                {% if user.is_staff%}
-                                <li class="nav-item movenav">
-
-                                    <a class="nav-link " href="{% url 'owner' %}">Manage</a>
-
-
-
-                                </li>
-                                {% endif %}
-                                <li class="nav-item movenav">
-                                    <div>
-                                        <a class="nav-link movenav" style="margin-left: 10px;" href="{% url 'cart' %}">
-                                            <svg xmlns="http://www.w3.org/2000/svg" height="2em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M528.12 301.319l47.273-208C578.806 78.301 567.391 64 551.99 64H159.208l-9.166-44.81C147.758 8.021 137.93 0 126.529 0H24C10.745 0 0 10.745 0 24v16c0 13.255 10.745 24 24 24h69.883l70.248 343.435C147.325 417.1 136 435.222 136 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-15.674-6.447-29.835-16.824-40h209.647C430.447 426.165 424 440.326 424 456c0 30.928 25.072 56 56 56s56-25.072 56-56c0-22.172-12.888-41.332-31.579-50.405l5.517-24.276c3.413-15.018-8.002-29.319-23.403-29.319H218.117l-6.545-32h293.145c11.206 0 20.92-7.754 23.403-18.681z"/></svg>
-                                            <p style="color: red;float: right; font-size: 12px;"> {{cartItems}} </p>
-                                        </a>
-
-                                        </a>
-
-                                    </div>
                                 </li>
                             </ul>
                         </div>
                     </nav>
                 </div>
             </div>
+            
+        </div>
+        
+
+                <!-- navigationbar -->
+                <div class="container-fluid header-container">
+                    
             <br>
             <br>
             {% for message in messages %}
@@ -255,37 +255,46 @@
         <footer class="page-footer font-small homefoot">
 
             <!-- Footer Links -->
-            <div class="container">
+            <div class="container footer-container" style="max-width: 100% !important;">
+                <div class="footer-logo-links">
+                    <div class="footer-logo-img">
+                        <img src="https://img.freepik.com/premium-vector/baby-happy-logo-vector-template_15146-1050.jpg?w=360" width="100px" height="80px" ahref="{% url 'home' %}";> 
 
+                    </div>
                 <!-- Grid row-->
-                <div class="row text-center d-flex justify-content-center mb-0"
-                    style="background-color: #ACA8A8; border-radius: 10px; height: 30px; ">
-
+                <div class="quick-links-wrap"
+                    >
+                    <div class="col-md-2 mb-3 pt-1">
+                        <h6 class="text-uppercase font-weight-bold width-144">
+                            <span class="quick-link-label">Quick Links</span>
+                        </h6>
+                    </div>
                     <!-- Grid column -->
                     <div class="col-md-2 mb-3 pt-1">
-                        <h6 class="text-uppercase font-weight-bold">
+                        <h6 class="text-uppercase font-weight-bold width-144">
                             <a href="{% url 'aboutus' %}">About us</a>
                         </h6>
                     </div>
                     <!-- Grid column -->
 
                     <!-- Grid column -->
-                    <div class="col-md-2 mb-3 pt-1">
-                        <h6 class="text-uppercase font-weight-bold">
+                    {% comment %} <div class="col-md-2 mb-3 pt-1">
+                        <h6 class="text-uppercase font-weight-bold width-144">
                             <a href="{% url 'helppage' %}">Help</a>
                         </h6>
-                    </div>
+                    </div> {% endcomment %}
                     <!-- Grid column -->
 
                     <!-- Grid column -->
                     <div class="col-md-2 mb-3 pt-1">
-                        <h6 class="text-uppercase font-weight-bold">
+                        <h6 class="text-uppercase font-weight-bold width-144">
                             <a href="{% url 'create-message' %}">Contact us</a>
                         </h6>
                     </div>
                     <!-- Grid column -->
 
                 </div>
+            </div>
 
             </div>
 

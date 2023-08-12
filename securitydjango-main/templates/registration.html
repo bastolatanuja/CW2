@@ -9,20 +9,62 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     .container {
+      margin-top: -60px;
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      min-height: 100%;
+      max-width: 100%;
+
+    }
+    {% comment %} .bg {
+      background-size: cover;
+      padding-top: 240px;
+      padding-left: 750px;
+      height: 100%;
+      width: 100%;
+      opacity: 0.9;
+    } {% endcomment %}
+
+    .container-reg {
+      width: 450px;
+      top: 129px;
+      height: 975px;
+      background-color: transparent;
+      opacity: 0.9;
+      position: absolute;
+      {% comment %} height: 100%; {% endcomment %}
+      left: 16px;
+      text-align: center;
+      box-shadow: 0 4px 8px 0 rgb(1, 1, 29);
+      }
+    .reg-reg-btn:hover{
+      background-color : blue;
+    }
+    .reg-cancel-btn:hover{
+      background-color : transparent !important;
+      border : 1px solid black;
+      color : black;
+    }
+    .ct-with-bg{
+      background : url('https://images.unsplash.com/photo-1519689680058-324335c77eba?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .footer-container{
+      min-height: 40vh;max-width: 100% !important;
     }
   </style>
 </head>
 
 <br>
 <br>
-<div class="container">
+
+<div class="container ct-with-bg" style="min-height: 975px;">
+  
   <div class="container-reg">
     <br>
-    <div class="title" style="color: orangered;"><b>Registration</b></div>
+    <div class="title" style="color: black;"><b>Registration</b></div>
     <div class="content pt-5">
       <form action="" method="post">
         {% csrf_token %}
@@ -60,8 +102,8 @@
         </div>
 
         <div class="button">
-          <input type="submit" class="btn btn-primary" style="margin-right: 15px;" value="Register">
-          <button class="btn btn-secondary">Cancel</button>
+          <input type="submit" class="btn btn-primary reg-reg-btn" style="margin-right: 15px;background-color:green;" value="Register">
+          <button class="btn btn-secondary reg-cancel-btn">Cancel</button>
         </div>
         <br>
       </form>
@@ -80,4 +122,6 @@
 </div>
 <br>
 <br>
+
 {% endblock %}
+

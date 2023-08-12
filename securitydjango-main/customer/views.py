@@ -56,6 +56,8 @@ def changePassword(request, pk):
                 user.save()
 
         print(password)
+        return redirect('/user-profile/')
+    
         
 
     return render(request, 'customer/changePassword.html')

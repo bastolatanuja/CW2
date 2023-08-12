@@ -12,23 +12,23 @@
 <div style="min-height: 100vh;">
     <section class="container-fluid ms-lg-5 ">
         <div class="container ms-lg-5">
-            <div class="row ms-lg-5 g-0">
-                <div class="col-lg-7 pt-5">
-                    <div class="col-lg-12 w-100 h-25" style="background-color: #616297;">
-
-                    </div>
-                    <div class="row mx-0">
-                        <div class="col-2" style="background-color: #616297;">
-
-                        </div>
-                        <div class="col-10 cform">
-                            <form class="row g-0" method="post">
+            <div class="row" style="
+            flex-direction: column;
+        ">
+                <div class="col-lg-12">
+                    
+                    <div class="row">
+                        
+                        <div class="col-12 cform">
+                            <form class="row g-0" method="post" style="    flex-direction: column;
+                            justify-content: center;
+                            align-items: center;">
                                 {%csrf_token%}
-                                <div class="col-lg-10 ms-lg-5 mt-1 pt-1">
-                                    <h4>Want us to contact you</h4>
+                                <div class="col-lg-10 ms-lg-5 mt-1 pt-1 text-center">
+                                    <h4>Contact Us</h4>
                                 </div>
-                                <div class="col-5 pt-3">
-                                    <span class="ps-lg-5">Leave a message</span>
+                                <div class="col-5 pt-3 text-center">
+                                    <span class="ps-lg-5">Leave Us a Message</span>
                                 </div>
                                 <div class="col-8 w-75 ps-lg-5 pt-2 ">
                                     <input type="text" class="form-control" name="name" placeholder="Name"
@@ -42,7 +42,7 @@
                                     <input type="text" class="form-control py-5" name="message" placeholder="Message"
                                         style="text-align: center;">
                                 </div>
-                                <div class="col-4 w-100 ps-lg-5 pt-3 pb-4 ">
+                                <div class="col-4 w-100 ps-lg-5 pt-3 pb-4 text-center">
                                     <input class="btn w-25" type="submit" value="submit"
                                         style="border-radius: 0px; background-color:#616297; color: white;"/>
 
@@ -51,32 +51,26 @@
                             </form>
 
                         </div>
-                        <div class="div-lg-12 pb-5 h-25 w-100" style="background-color: #616297;"
-                            style="padding-bottom: 100px;">
-
-                        </div>
+                        
                     </div>
                 </div>
 
-                <div class="col-lg-3 mt-5 cont">
-                    <div class="col-lg-12 w-100 h-25" style="background-color: #ffffff;">
-
-                    </div>
-                    <div class="col-lg-12 w-100 h-25" style="background-color: #616297;">
-
-                    </div>
+                <div class="col-lg-3 mt-5 cont" style="    background-color: #372ca345;
+                width: 100%;
+            }">
+                   
 
                     <div class="col-lg-11 w-100">
-                        <div class=" row ms-lg-0 col-lg-12" style="background-color: #616297;">
-                            <div class="col-lg-12">
-                                <h5 class="ms-lg-4 bg-white py-2 px-lg-5">Contact us</h5>
+                        <div class=" row ms-lg-0 col-lg-12" style="gap: 20px;">
+                            <div class="col-lg-12 text-center">
+                                <h5 class="col-lg-12">Contact Information</h5>
                             </div>
-                            <div class="row ">
-                                <div class="col-lg-3">
+                            <div class="row text-center">
+                                <div class="col-lg-12">
                                     <i class="fas fa-map-marker-alt px-lg-4 pt-3"
                                         style="font-size:25px; border-radius: 30px; color:white"></i>
                                 </div>
-                                <div class="col-lg-9 ps-lg-4">
+                                <div class="col-lg-12 text-center">
                                     <span style="color:white ">Gyaneshwor,
                                         Kathmandu
                                         Nepal
@@ -84,31 +78,29 @@
                                 </div>
                             </div> <br>
 
-                            <div class="row mt-3">
-                                <div class="col-lg-3">
+                            <div class="row text-center">
+                                <div class="col-lg-12">
                                     <i class="fas fa-envelope px-lg-4"
                                         style="font-size:25px; border-radius: 30px; color:white"></i>
                                 </div>
-                                <div class="col-lg-9 ps-lg-4">
-                                    <span style="color:white ">Happypaws@gmail.com</span>
+                                <div class="col-lg-12 text-center">
+                                    <span style="color:white ">tanujabastola143@gmail.com</span>
                                 </div>
                             </div>
 
-                            <div class="row mt-3">
-                                <div class="col-lg-3">
+                            <div class="row text-center">
+                                <div class="col-lg-12">
                                     <i class="fas fa-phone px-lg-4 "
                                         style="font-size:25px; border-radius: 30px; color:white"></i>
                                 </div>
-                                <div class="col-lg-9 ps-lg-4">
+                                <div class="col-lg-12 text-center">
                                     <span style="color:white "> 01-4042762</span>
                                 </div>
                             </div>
 
                         </div>
                     </div>
-                    <div class="col-12 h-25 low" style="background-color: #616297;">
-
-                    </div>
+                    
                 </div>
 
             </div>

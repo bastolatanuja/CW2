@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;800;900&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&family=Raleway:ital,wght@0,100;0,400;0,500;0,600;1,200;1,500;1,900&display=swap');
 *{
-  font-family:Verdana, Geneva, Tahoma, sans-serif
+  font-family: 'Raleway', sans-serif;
+  font-weight: 800;
 }
 
 body {
@@ -184,8 +186,10 @@ a:hover {
 
 .hometag{
   /* background-image: linear-gradient(to right top, #456d9c, #a3b3c5, #a7b7c7, #7da2c8, #13171a); */
-background: rgb(255,255,255);
-background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,145,1) 100%);
+width: 100%;
+/* background-color: purple; */
+background-color: lightpink;
+
 }
 
 .botfoot {
@@ -194,6 +198,7 @@ background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,1
   height: 30px;
   position:absolute;
 }
+
 
 /* .hometag :hover{
   background-color: aqua;
@@ -244,7 +249,9 @@ background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,1
   margin-right: auto;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
-
+.box:hover{
+  background-color: #e384cb;
+}
 .card {
   display: table-cell;
   vertical-align: bottom;
@@ -272,12 +279,15 @@ background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,1
 
 /* categories */
 .card{
-  box-shadow: 12px 12px 2px 1px rgba(0, 153, 255, 0.2);
-  border-radius: 15px;
+    /* box-shadow: 12px 12px 2px 1px rgba(0, 153, 255, 0.2); */
+    /* border-radius: 15px; */
+    background-color: lightpink;
+    /* background-color: #000; */
+    width: 20rem !important;
 }
 
 .card:hover {
-  box-shadow: -12px 12px 2px -1px rgba(80, 131, 189, 0.2);
+  box-shadow: -12px 12px 2px -1px rgba(228, 124, 178, 0.2);
   }
 
   .hover-two:hover  .two {
@@ -342,10 +352,62 @@ background-color: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(151,180,1
 
 .btn-primary {
   /* Define primary button styles here */
-  background-color: #25cc0b;
+  background-color: #0d6efd;
 }
 
 .btn-primary:hover {
   /* Define styles for button hover state */
-  background-color: #07ee86;
+  background-color: transparent;
+  border: 1px solid black;
+}
+.row{
+  --bs-gutter-x: 0 !important; 
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+}
+#navbarNav{
+  justify-content: space-around;
+    width: 100%;
+}
+.navlist{
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+  padding-top: 45px;
+}
+.nav-link{
+  font-size: larger;
+
+}
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  position: absolute;
+  right: 0;
+}
+
+.flex--box{
+  display: flex;
+  gap: 50px;
+  margin: 0px 40px;
+}
+.footer-container{
+  max-width: 100%;
+    height: 300px;
+    background-color: lightcoral;
+}
+
+.footer-logo-links{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  /* padding-top: 40px; */
+}
+.width-144{
+  width : 144px;
+}
+.quick-link-label{
+  font-size: x-large;
+  width: 300px;
+  display: block;
 }

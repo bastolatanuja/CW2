@@ -80,6 +80,7 @@ urlpatterns = [
     path('delete-account/<int:pk>/', delete_account, name='delete-account'),
   
     path('change-password/<int:pk>/', changePassword, name='change-password'),
+    
     path('update-account/<int:pk>/', update_account, name='update-account'),
     path('baseuser', baseuser),
 
