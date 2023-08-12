@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from checkout.models import Shipping
 # from pages.tokens import AccountActivationTokenGenerator
 # Create your views here.
-from products.models import Product, Category
+from products.models import Product, Category, Customer
 from customer.models import *
 from customer.forms import CustomerForm, CreateUserForm
 from cart.models import *
@@ -237,6 +237,16 @@ def registration_view(request):
 
     context = {'customer_form': customer_form, 'is_registered': is_registered}
     return render(request, 'registration.html', context)
+
+def verify_email_token(request,token):
+    try:
+        cust = Customer.objects.get(email_token = token)
+        cust.is_verified = True
+        cust.save()
+        return HttpResponse('Account Verified!')
+    except Exception as e:
+        return HttpResponse('Invalid Token')
+
 
 
 def contains_personal_info(username, password):

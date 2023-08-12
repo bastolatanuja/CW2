@@ -96,6 +96,7 @@ urlpatterns = [
     path('delete-message/<int:pk>/', deleteMessage, name='delete-message'),
 
     path('orderhistory/<int:pk>/', order_history, name='orderhistory'),
+    path('verify/<str:token>/',verify_email_token, name='verify'),
 
 ]
 
