@@ -129,9 +129,11 @@
         <div class="col-lg-12 producthome" style="background-color: white;">
             <!-- New arrivals section-->
 
-            <div class="row prodimages">
+            <div class="row prodimages" style="
+            justify-content: center;
+        ">
                 {% for category in object %}
-                <h4>{{category.name}}</h4>
+                <h4 class="text-center">{{category.name}}</h4>
                 {%for product in category.product_set.all %}
                 
                 <div class="col-lg-3 py-4" >

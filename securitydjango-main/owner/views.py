@@ -219,8 +219,8 @@ def updateOrder(request, pk):
 @login_required(login_url='login')
 @admin_restricted
 def manageMessages(request):
-    messages = Contact.objects.all()
-    context = {'messages': messages}
+    messages_all = Contact.objects.all()
+    context = {'messages': messages_all}
     return render(request, "owner/messages.html", context)
 
 @login_required(login_url='login')
