@@ -239,13 +239,16 @@ def registration_view(request):
     return render(request, 'registration.html', context)
 
 def verify_email_token(request,token):
+    print(token)
     try:
         cust = Customer.objects.get(email_token = token)
         cust.is_verified = True
         cust.save()
-        return HttpResponse('Account Verified!')
+        messages.success(request, 'Account Verification Successful')
+        return render(request, 'customer/userprofile.html')
     except Exception as e:
-        return HttpResponse('Invalid Token')
+        messages.success(request, 'Invalid Token')
+        return render(request, 'customer/userprofile.html')
 
 
 

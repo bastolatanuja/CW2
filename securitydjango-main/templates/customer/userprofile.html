@@ -65,10 +65,18 @@
                 background-color: #cfd3a4 !important;
             ">
                     <div class="row align-items-center">
-                        <div style="display: flex;justify-content: center;">
+                        <div style="display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;">
                             <h3 style="
                             font-size: xxx-large;
                         ">Profile</h3>
+                        {% if user.customer.is_verified %}
+                            <p style="color:blue;font-weight: 900;">Verified</p>
+                        {% else %}
+                            <p style="color:red;font-weight: 900;">Account Not Verified. Please verify your account.</p>
+                        {% endif %}
                         </div>
                         <div style="
                         width: 100%;
